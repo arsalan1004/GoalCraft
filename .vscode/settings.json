@@ -1,0 +1,5 @@
+{
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "typescript.preferences.includePackageJsonAutoImports": "on"
+}
