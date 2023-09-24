@@ -6,10 +6,11 @@ const {
   loginUser,
   getMe,
 } = require("../controllers/userControllers.js");
+const { protect } = require("../middlewares/authMw");
 
 userRouter.post("/", registerUser);
 userRouter.post("/login", loginUser);
-userRouter.get("/me", getMe);
+userRouter.get("/me", protect, getMe);
 
 module.exports = {
   userRouter,

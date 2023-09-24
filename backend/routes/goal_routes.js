@@ -9,9 +9,11 @@ const {
   deleteGoal,
 } = require("../controllers/goalControllers");
 
-goalRouter.get("/", getGoals);
-goalRouter.post("/", setGoal);
-goalRouter.put("/:id", updateGoal);
-goalRouter.delete("/:id", deleteGoal);
+const { protect } = require("../middlewares/authMw");
+
+goalRouter.get("/", protect, getGoals);
+goalRouter.post("/", protect, setGoal);
+goalRouter.put("/:id", protect, updateGoal);
+goalRouter.delete("/:id", protect, deleteGoal);
 
 module.exports = { goalRouter };
